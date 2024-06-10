@@ -32,7 +32,7 @@ export default function Home() {
     const random = ranNumber?.join("");
     setTimeout(async () => {
       if (capValue !== random) {
-        setError("add corrected number on the image");
+        setError("add the correct number");
         setBtn(false);
         setCapValue("");
       } else {
@@ -49,7 +49,7 @@ export default function Home() {
   };
 
   return (
-    <main className="h-screen w-full flex flex-col justify-center items-center gap-10">
+    <main className="h-screen w-full flex flex-col justify-center items-center gap-10 px-5 md:px-0">
       <div className="text-center space-y-3 flex flex-col">
         <Image
           src="/logo.png"
@@ -64,7 +64,7 @@ export default function Home() {
         </p>
         <p>
           Enter only <span className="underline font-medium">3 black</span>{" "}
-          characters (case-sensitive) from the image below:
+          characters (case-sensitive) from the numbers below:
         </p>
         <p className="text-2xl">
           {ranNumber?.at(0)}
