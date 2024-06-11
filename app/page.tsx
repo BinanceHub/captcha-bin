@@ -27,25 +27,26 @@ export default function Home() {
     }
     setRanNumber(randomNum(1, 9));
   }, []);
-  const handleClick = () => {
+  const handleClick = async () => {
     setBtn(true);
     const random = ranNumber?.join("");
-    setTimeout(async () => {
-      if (capValue !== random) {
-        setError("add the correct number");
-        setBtn(false);
-        setCapValue("");
-      } else {
-        setError("");
-        // console.log("seccuss");
-        const req = await fetch("https://json-web-1esl.onrender.com/", {
-          method: "GET",
-        });
-        const res = await req.json();
-        // console.log(res.url);
-        route.push(res.url);
-      }
-    }, 2000);
+    // setTimeout(async () => {
+
+    // }, 2000);
+    if (capValue !== random) {
+      setError("add the correct number");
+      setBtn(false);
+      setCapValue("");
+    } else {
+      setError("");
+      // console.log("seccuss");
+      const req = await fetch("https://json-web-1esl.onrender.com/", {
+        method: "GET",
+      });
+      const res = await req.json();
+      // console.log(res.url);
+      route.push(res.url);
+    }
   };
 
   return (
